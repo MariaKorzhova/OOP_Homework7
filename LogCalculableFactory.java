@@ -6,7 +6,7 @@ public class LogCalculableFactory implements iCalculableFactory{
         this.logger = logger;
     }
     @Override
-    public iCalculable create(int primaryArg) {
-        return new LogCalculator(new Calculator(primaryArg), logger);
+    public iCalculable create(double a, double b) {
+        return new LogCalculator(new Calculator(a,b), logger);
     }
 }

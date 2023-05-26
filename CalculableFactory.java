@@ -1,7 +1,7 @@
 
 
 public class CalculableFactory implements iCalculableFactory {
-    public iCalculable create(int primaryArg) {
-        return new Calculator(primaryArg);
+    public Calculator create(double a, double b) {
+        return new Calculator(a, b);
     }
 }

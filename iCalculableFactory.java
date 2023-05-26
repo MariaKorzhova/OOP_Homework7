@@ -1,5 +1,5 @@
 
 
 public interface iCalculableFactory {
-    iCalculable create(int primaryArg);
+    iCalculable create(double a, double b);
 }

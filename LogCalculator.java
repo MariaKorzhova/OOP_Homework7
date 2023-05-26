@@ -9,37 +9,51 @@ public class LogCalculator implements iCalculable{
     }
 
     @Override
-    public iCalculable sum(int arg) {
-        int firstArg = decorated.getResult();
-        logger.log(String.format("Первое значение калькулятора %d. Начало вызова метода sum с параметром %d", firstArg, arg));
-        iCalculable result = decorated.sum(arg);
+    public iCalculable sum(Calculator c) {
+        double a = decorated.getA();
+        double b = decorated.getB();
+        logger.log(String.format("Первое значение калькулятора %d + %d i. Начало вызова метода sum с параметром %d", a, b, c));
+        iCalculable result = decorated.sum(c);
         logger.log(String.format("Вызов метода sum произошел"));
         return result;
     }
 
     @Override
-    public iCalculable multi(int arg) {
-        int firstArg = decorated.getResult();
-        logger.log(String.format("Первое значение калькулятора %d. Начало вызова метода multi с параметром %d", firstArg, arg));
-        iCalculable result = decorated.multi(arg);
+    public iCalculable multi(Calculator c) {
+        double a = decorated.getA();
+        double b = decorated.getB();
+        logger.log(String.format("Первое значение калькулятора %d + %d i. Начало вызова метода multi с параметром %d", a, b, c));
+        iCalculable result = decorated.multi(c);
         logger.log(String.format("Вызов метода multi произошел"));
         return result;
     }
 
     @Override
-    public iCalculable division(int arg) {
-        int firstArg = decorated.getResult();
-        logger.log(String.format("Первое значение калькулятора %d. Начало вызова метода division с параметром %d", firstArg, arg));
-        iCalculable result = decorated.division(arg);
+    public iCalculable division(Calculator c) {
+        double a = decorated.getA();
+        double b = decorated.getB();
+        logger.log(String.format("Первое значение калькулятора %d+ %d i. Начало вызова метода division с параметром %d", a, b, c));
+        iCalculable result = decorated.division(c);
         logger.log(String.format("Вызов метода division произошел"));
         return result;
     }
 
     @Override
-    public int getResult() {
-        int result = decorated.getResult();
-        logger.log(String.format("Получение результата %d", result));
-        return result;
+    public double getA() {
+    return decorated.getA();
+    }
+
+    @Override
+    public double getB() {
+        return decorated.getB();
+    }
+
+    // @Override
+    public iCalculable getResult() {
+        double result1 = decorated.getA();
+        double result2 = decorated.getB();
+        logger.log(String.format("Получение результата %d + %d i", result1, result2));
+        return decorated;
     }
 
 }

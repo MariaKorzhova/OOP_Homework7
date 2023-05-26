@@ -1,8 +1,9 @@
 
 
 public interface iCalculable {
-    iCalculable sum(int arg);
-    iCalculable multi(int arg);
-    iCalculable division(int arg);
-    int getResult();
+    iCalculable sum(Calculator arg);
+    iCalculable multi(Calculator arg);
+    iCalculable division(Calculator arg);
+    double getA();
+    double getB();
 }

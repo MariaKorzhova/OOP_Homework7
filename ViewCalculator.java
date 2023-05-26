@@ -12,28 +12,37 @@ public class ViewCalculator {
 
     public void run() {
         while (true) {
-            int primaryArg = promptInt("Введите первый аргумент: ");
-            iCalculable calculator = calculableFactory.create(primaryArg);
+            double a = promptInt("Введите действительную часть комплексного числа: ");
+            double b = promptInt("Введите мнимую часть комплексного числа: ");
+            iCalculable calculator = calculableFactory.create(a, b);
             while (true) {
                 String cmd = prompt("Введите команду (*, +, /, =) : ");
                 if (cmd.equals("*")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.multi(arg);
+                    // int arg = promptInt("Введите второй аргумент: ");
+                    double c = promptInt("Введите действительную часть комплексного числа: ");
+                    double d = promptInt("Введите мнимую часть комплексного числа: ");
+                    iCalculable calculator1 = calculableFactory.create(c, d);
+                    calculator.multi(calculator1);
                     continue;
                 }
                 if (cmd.equals("+")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.sum(arg);
+                    double c = promptInt("Введите действительную часть комплексного числа: ");
+                    double d = promptInt("Введите мнимую часть комплексного числа: ");
+                    iCalculable calculator2 = calculableFactory.create(c, d);
+                    calculator.sum(calculator2);
                     continue;
                 }
                 if (cmd.equals("/")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.division(arg);
+                    double c = promptInt("Введите действительную часть комплексного числа: ");
+                    double d = promptInt("Введите мнимую часть комплексного числа: ");
+                    iCalculable calculator3 = calculableFactory.create(c, d);
+                    calculator.division(calculator3);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int result = calculator.getResult();
-                    System.out.printf("Результат %d\n", result);
+                    double result1 = calculator.getA();
+                    double result2 = calculator.getB();
+                    System.out.printf("Результат %d + %d i ", result1, result2);
                     break;
                 }
             }
