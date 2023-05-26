@@ -1,17 +1,18 @@
 
-
+// Создание класса Calculator и подключение интерфейса iCalculable
 public final class Calculator implements iCalculable {
     
     private double a;
     private double b;
     // private int primaryArg;
 
+// Конструктор класса Calculator, созд. комплексное число с заданными действительной и мнимой частями.
     public Calculator(double a, double b) {
         this.a = a;
         this.b = b;
     }
 
-    // @Override
+// Метод для вычисления суммы комплексных чисел
     public iCalculable sum(Calculator c) {
         // primaryArg += arg;
         a+=c.a;
@@ -19,7 +20,7 @@ public final class Calculator implements iCalculable {
         return this;
     }
 
-    // @Override
+// Метод для вычисления произведения комплексных чисел
     public iCalculable multi(Calculator c) {
         // primaryArg *= arg;
         double tempA = a;
@@ -29,7 +30,7 @@ public final class Calculator implements iCalculable {
         return this;
     }
 
-    // @Override
+// Метод для вычисления частного комплексных чисел
     public iCalculable division(Calculator c) {
         // primaryArg /= arg;
         double tempA = a;
@@ -39,11 +40,11 @@ public final class Calculator implements iCalculable {
         b = ((tempB * c.a) - (tempA * c.b)) / temp;
         return this;
     }
-
+// Метод для вызова действительной части комплексного числа
     public double getA(){
         return a;
     }
-
+// Метод для вызова мнимой части комплексного числа
     public double getB(){
         return b;
     }
